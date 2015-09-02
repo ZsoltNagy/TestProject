@@ -16,6 +16,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+
+// Anderung nach pull request
+
 public class MainActivity extends Activity {
 	ImageView imgView1 = null;
 	ImageView imgView2 = null;
