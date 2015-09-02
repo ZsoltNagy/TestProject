@@ -2,6 +2,8 @@ package com.zsolt.bitmapdemo;
 
 import java.io.File;
 
+// germany
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.graphics.Bitmap;
@@ -22,7 +24,7 @@ public class MainActivity extends Activity {
 
 	class LoadPNGListener implements android.view.View.OnClickListener {
 	    public void onClick(View v) {
-	        
+
 	        Point p = new Point();
 
 	        getWindowManager().getDefaultDisplay().getSize(p);
@@ -34,12 +36,12 @@ public class MainActivity extends Activity {
 	        int maxWForEachScreen = screenWidth / matrixN;
 	        int maxHForEachScreen = screenHeight / matrixN;
 
-	        
+
 	    	File fileLocal = getFilesDir();
 			Log.d("BITMAP", fileLocal.getAbsoluteFile() + "\n");
 
 			RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rel_layout);
-			
+
 			File imgFile = new  File(fileLocal.getAbsoluteFile() +  "/clover_1.png");
 			if(imgFile.exists()){
 			    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
@@ -55,13 +57,13 @@ public class MainActivity extends Activity {
 			    imgView3.setImageBitmap(myBitmap);
 			    imgView4.setImageBitmap(myBitmap);
 
-			    
-			    
+
+
 			    RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(100, 100);
 		        RelativeLayout.LayoutParams params2 = new RelativeLayout.LayoutParams(100, 100);
 		        RelativeLayout.LayoutParams params3 = new RelativeLayout.LayoutParams(100, 100);
 		        RelativeLayout.LayoutParams params4 = new RelativeLayout.LayoutParams(100, 100);
-		        
+
 		        params1.height = maxHForEachScreen/2;
 		        params1.width = maxWForEachScreen/2;
 
@@ -79,34 +81,34 @@ public class MainActivity extends Activity {
 		        params2.setMargins(maxWForEachScreen/2, 0, 0, 0);
 		        params3.setMargins(0, maxHForEachScreen/2, 0, 0);
 		        params4.setMargins(maxWForEachScreen/2, maxHForEachScreen/2, 0, 0);
-		        
-		        
+
+
 		        relativeLayout.addView(imgView1, params1);
 		        relativeLayout.addView(imgView2, params2);
 		        relativeLayout.addView(imgView3, params2);
 		        relativeLayout.addView(imgView4, params2);
 
 
-		        
-		        
+
+
 			    // imgView1.setX(x)
-			    
+
 			    //ImageView myImage = (ImageView) findViewById(R.id.imageView1);
 			    //myImage.setImageBitmap(myBitmap);
-			}			
+			}
 	    }
 	}
-	
-	
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
+
 		LoadPNGListener clearListener = new LoadPNGListener();
         Button clearButton = (Button) findViewById(R.id.button1);
-        clearButton.setOnClickListener(clearListener);       
-		
+        clearButton.setOnClickListener(clearListener);
+
 	}
 
 	@Override
